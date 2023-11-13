@@ -14,7 +14,23 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+2nd solution
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const char *str = (const char *)s;
+	size_t	i;
 
+	i = 0;
+	while (i < n)
+	{
+		if (str[i] == (char)c)
+			return ((void *)&str[i]);
+		i++;
+	}
+	return (NULL);
+}
+*/
 int	main(void)
 {
 	char	s[] = "answer";

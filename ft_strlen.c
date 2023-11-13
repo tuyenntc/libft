@@ -14,26 +14,35 @@ size_t	ft_strlen(const char *s)
 
 //2nd solution
 /*
+ size_t  ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
 	while (*s)
+	{
 		i++;
 		s++;
+	}
 	return (i);
 }
-OR: while (*s++) i++;
 
-!!s[i] == *(s+i)
+OR
+ size_t  ft_strlen(const char *s)
+ {
+	size_t	i = 0;
+	while (*s++) 
+		i++;
+	return (i);
 
 //3rd solution:
+ size_t  ft_strlen(const char *s)
 {
 	const char *str;
-	s = str;
+	str = s;
 	while (*s)
 		++s;
-	return (s - str)
+	return (s - str);
 }
 start:
 		hello\0

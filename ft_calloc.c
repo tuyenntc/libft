@@ -1,5 +1,5 @@
 #include "libft.h"
-
+/*
 void    *ft_calloc(size_t count, size_t size)
 {
 	size_t	total_size;
@@ -8,19 +8,20 @@ void    *ft_calloc(size_t count, size_t size)
 	void	*allocated_memory = malloc(total_size);
 	if(allocated_memory == NULL)
 		return (NULL);
-	//memset(allocated_memory, 0, total_size);
-	//return (allocated_memory);
-	char *ptr = (char *)allocated_memory;
-	size_t	i;
-	i = 0;
-	while (i < total_size)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+	ft_memset(allocated_memory, 0, total_size);
 	return (allocated_memory);
 }
-
+*/
+void    *ft_calloc(size_t count, size_t size)
+{
+	void	*s;
+	s = malloc(count * size);
+	if (!(s))
+		return (NULL);
+	s = ft_memset(s, 0, count * size);
+	return (s);
+}
+/*
 int	main()
 {
 	size_t	num_elements = 5;
@@ -38,3 +39,4 @@ int	main()
 	}
 	return (0);
 }
+*/

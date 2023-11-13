@@ -28,7 +28,7 @@ char f(unsigned int i, char c)
 	str = c + 1;
 	return (str);
 }
-in8t	main()
+int	main()
 {
 	char	str1[] = "abc";
 	char *str2 = ft_strmapi(str1, f);

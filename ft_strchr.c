@@ -1,20 +1,19 @@
 #include "libft.h"
 
 //1st solution
-/*
+
 char *ft_strchr(const char *s, int c)
 {
-	char	ch;
-
-	ch = c;
 	while (1)
+	{
 		++s;
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		if (*s == '\0')
 			return (NULL);
+	}
 }
-*/
+/*
 
 //2nd solution
 char *ft_strchr(const char *s, int c)
@@ -25,12 +24,12 @@ char *ft_strchr(const char *s, int c)
 			return (char *)s;
 		return (NULL);
 }
+*/
 
-/*
 int	main(void)
 {
 	char	text[] = "hello";
-	char	ch_find = 'e';
+	char	ch_find = 'o';
 	char	*result = ft_strchr(text, ch_find);
 	if (result != NULL)
 		printf("character found at position %ld\n", result - text);
@@ -38,4 +37,4 @@ int	main(void)
 		printf("character not found\n");
 	return (0);
 }
-*/
+

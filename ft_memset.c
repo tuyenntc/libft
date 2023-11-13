@@ -1,9 +1,5 @@
 #include "libft.h"
-#include <string.h>
-#include <stdlib.h>
 
-
-#define SIZE_ARRAY 5
 /*
 void    *ft_memset(void *b, int c, size_t len)
 {
@@ -69,7 +65,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
+/*
 int	main(void)
 {
 	char str[50] = "hello cowboy bebop pike";
@@ -80,4 +76,4 @@ int	main(void)
 	printf("call memset function from lib: %s\n", str);
 	return (0);
 }
-
+*/

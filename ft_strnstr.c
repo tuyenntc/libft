@@ -2,26 +2,59 @@
 
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
 	size_t	j;
 
-	i = 0;
-	if (!*needle)
+	if (*needle == '\0' || (!haystack && len == 0))
 		return (char *)haystack;
-	while (haystack[i] && i < len)
+	while (*haystack && len--)
 	{
 		j = 0;
-		while (haystack[i + j] == needle[j] && (i + j) < len)
+		while (haystack[j] == needle[j] && needle[j] && j <= len)
 		{
 			if (!needle[j + 1])
-				return (char *)&haystack[i];
+				return (char *)haystack;
 			j++;
 		}
-		i++;
+		haystack++;
 	}
 	return (NULL);
 }
+/*
+char	*ft_strnstr(char const *haystack, char const *needle, size_t n)
+{
+	size_t	j;
 
+	if (!haystack && !n)
+		return (NULL);
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && n--)
+	{
+		j = 0;
+		while (*(haystack + j) == *(needle + j)
+			&& *(needle + j) && j <= n)
+		{
+			if (!*(needle + j + 1))
+				return ((char *)haystack);
+			j++;
+		}
+		haystack++;
+	}
+	return (NULL);
+}
+*/
+int	main(void)
+{	
+	const char *haystack = "abcxyzghj";
+	const char *needle = "klm";
+	char	*result = ft_strnstr(haystack, needle, 9);
+	if (result != NULL)
+		printf("found substring>> %s at position %ld\n", needle, result - haystack);
+	else
+		printf("substring>> %s is not found in the string %s\n", needle, haystack);
+	return (0);
+}
+/*
 int	main(void)
 {
 	const char	*haystack = "blue sky sometimes blink";
@@ -46,3 +79,4 @@ int	main(void)
 		printf("not found\n");
 	return (0);
 }
+*/
