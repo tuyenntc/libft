@@ -63,7 +63,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 	trimmed[trimmed_len] = '\0';
 	return (trimmed);
 }
-*/
+
 int	main()
 {
 	const char *input = "   hello there    ";
@@ -79,3 +79,4 @@ int	main()
 		printf("memory allocation failed\n");
 	return (0);
 }
+*/

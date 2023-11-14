@@ -2,20 +2,15 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	unsigned char	b;
-	unsigned char *mem;
+	unsigned char	b = '\0';
+	unsigned char *mem = (unsigned char *)s;
 
-	mem = s;
-	b = '\0';
-	i = 0;
-	while (i < n)
+	while (n--)
 	{
-		mem[i] = b;
-		i++;
+		*mem++ = b;
 	}
 }
-
+/*
 #include <string.h>
 
 int	main(void)
@@ -26,3 +21,4 @@ int	main(void)
 	printf("modified string: %s\n", s);
 	return (0);
 }
+*/

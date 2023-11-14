@@ -33,7 +33,7 @@ int ft_ memcmp(const void *s1, const void *s2, size_t n) {
 
     return 0;  // Memory blocks are identical
 }
-*/
+
 int main(void)
 {
     char str1[] = "hello";
@@ -50,3 +50,4 @@ int main(void)
 
     return 0;
 }
+*/

@@ -67,7 +67,7 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 #include <string.h>
-*/
+
 int	main(void)
 {
 	char	str1[] = "hello world";
@@ -78,3 +78,4 @@ int	main(void)
 	printf("after: str1 = %s, str2 = %s\n", str1, str2);
 	return (0);
 }
+*/

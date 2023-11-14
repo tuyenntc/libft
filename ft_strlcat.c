@@ -1,6 +1,6 @@
 #include "libft.h"
-//REMOVE RESTRICT KEYWORDS
-size_t  ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+/*
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	j;
@@ -31,9 +31,8 @@ int	main(void)
 	printf("concat string is: %s\n", dest);
 	return (0);
 }
-/*
+*/
 // 2nd solution:
-
 size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
 {
 	if (dst == NULL || src == NULL)
@@ -60,13 +59,3 @@ size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsiz
 	return (dlen + ft_strlen(src));
 }
 
-int	main(void)
-{
-	char	destination[] = "this is";
-	char	source[] = "the way";
-	size_t	result = ft_strlcat(destination, source, sizeof(destination));
-	destination[sizeof(destination) - 1] = '\0';
-	printf("concatenated string is: %s\n", destination);
-	return (0);
-}
-*/

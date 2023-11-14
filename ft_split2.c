@@ -69,7 +69,7 @@ char **ft_split(const char *s, char c)
 	str_list[i] = NULL;
 	return (str_list);
 }
-
+/*
 int	main(void)
 {
 	const char 	*input = "this is the way";
@@ -84,3 +84,4 @@ int	main(void)
 		printf("memory allocation failed\n");
 	return (0);
 }
+*/

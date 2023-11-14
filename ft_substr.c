@@ -3,17 +3,21 @@
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
+	size_t	size;
 
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) < start)
+	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));
-	if(!(substr = (char *)malloc(sizeof(char) * (len + 1))))
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	substr = (char *)malloc(sizeof(char) * (len + 1));
+	if(!substr)
 		return (NULL);
-	ft_strlcpy(substr, s+start, len+1);
+	ft_strlcpy(substr, s + start, len + 1);
 	return (substr);
 }
-
 /*
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
@@ -36,7 +40,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 	substring[len] = '\0';
 	return (substring);
 }
-*/
+
 int	main()
 {
 	const char *original = "test string";
@@ -54,3 +58,4 @@ int	main()
 	}
 	return (0);
 }
+*/

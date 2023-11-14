@@ -1,5 +1,5 @@
 #include "libft.h"
-
+/*
 //1st solution
 
 char *ft_strchr(const char *s, int c)
@@ -13,9 +13,10 @@ char *ft_strchr(const char *s, int c)
 			return (NULL);
 	}
 }
-/*
+
 
 //2nd solution
+*/
 char *ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char)c)
@@ -24,8 +25,8 @@ char *ft_strchr(const char *s, int c)
 			return (char *)s;
 		return (NULL);
 }
-*/
 
+/*
 int	main(void)
 {
 	char	text[] = "hello";
@@ -37,4 +38,4 @@ int	main(void)
 		printf("character not found\n");
 	return (0);
 }
-
+*/

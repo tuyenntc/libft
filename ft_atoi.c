@@ -2,30 +2,25 @@
 
 int	ft_atoi(const char *str)
 {
-	short	sign;
-	int	number;
+	long long	result;
+	int	sign;
 
-	sign = 0;
-	number = 0;
+	result = 0;
+	sign = 1;
 	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
-	while (*str == '+' || *str == '-')
+	if (*str == '-')
+		sign *= -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
 	{
-		if(*str == '-')
-			sign++;
-		++str;
+		result = result * 10 + *str - '0';
+		str++;
 	}
-	while (*str >= 48 && *str <= 57)
-	{
-		number *= 10;
-		number += *str - 48;
-		++str;
-	}
-	if (!(sign % 2))
-		return (number);
-	return (-number);
+	return (result * sign);
 }
-
+/*
 int main() {
     const char *str1 = "12345";
     const char *str2 = "-6789";
@@ -43,4 +38,4 @@ int main() {
     printf("String: %s, Integer: %d\n", str4, num4);
 
     return 0;
-}
+}*/

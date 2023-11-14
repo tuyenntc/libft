@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 	str_list[i] = NULL;
 	return (str_list);
 }
-
+/*
 int	main()
 {
 	int	i;
@@ -96,4 +96,4 @@ int	main()
 		printf("memory allocation failed\n");
 	return (0);
 }
-
+*/

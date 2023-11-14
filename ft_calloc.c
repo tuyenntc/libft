@@ -1,27 +1,26 @@
 #include "libft.h"
+
+void    *ft_calloc(size_t count, size_t size)
+{
+	if(size != 0 && count > SIZE_MAX / size)
+		return (NULL);
+	void *ptr = malloc(count * size);
+	if (!ptr)
+		return (NULL);
+	ft_memset(ptr,0, count * size);
+	return (ptr);
+}
 /*
 void    *ft_calloc(size_t count, size_t size)
 {
-	size_t	total_size;
-
-	total_size = count * size;
-	void	*allocated_memory = malloc(total_size);
-	if(allocated_memory == NULL)
-		return (NULL);
-	ft_memset(allocated_memory, 0, total_size);
-	return (allocated_memory);
-}
-*/
-void    *ft_calloc(size_t count, size_t size)
-{
-	void	*s;
-	s = malloc(count * size);
-	if (!(s))
-		return (NULL);
-	s = ft_memset(s, 0, count * size);
+	void	*tmp;
+	tmp = malloc(count * size);
+	if (tmp == 0)
+		return (0);
+	ft_memset(s, 0, count * size);
 	return (s);
 }
-/*
+
 int	main()
 {
 	size_t	num_elements = 5;

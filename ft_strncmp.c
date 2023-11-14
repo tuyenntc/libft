@@ -29,6 +29,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (*(unsigned char *)&s1[i] - *(unsigned char *)&s2[i]);
 }
+/*
 int	main(void)
 {
 	char	*s1 = "abc";
@@ -42,3 +43,4 @@ int	main(void)
 		printf("s1 < s2\n");
 	return (0);
 }
+*/

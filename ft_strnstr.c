@@ -42,7 +42,7 @@ char	*ft_strnstr(char const *haystack, char const *needle, size_t n)
 	}
 	return (NULL);
 }
-*/
+
 int	main(void)
 {	
 	const char *haystack = "abcxyzghj";
@@ -54,7 +54,7 @@ int	main(void)
 		printf("substring>> %s is not found in the string %s\n", needle, haystack);
 	return (0);
 }
-/*
+
 int	main(void)
 {
 	const char	*haystack = "blue sky sometimes blink";

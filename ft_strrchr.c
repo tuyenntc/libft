@@ -2,16 +2,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char *last = NULL;
+	char *last;
+
+	last = NULL;
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == (unsigned char)c)
 			last = (char *)s;
 		++s;
 	}
+	if (c == 0)
+		return ((char *)s);
 	return (last);
 }
-
+/*
 int	main(void)
 {
 	char	*input = "hello world";
@@ -24,3 +28,4 @@ int	main(void)
 		printf("character '%c' not found in the string\n", target);
 	return (0);
 }
+*/
