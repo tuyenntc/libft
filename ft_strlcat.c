@@ -33,7 +33,7 @@ int	main(void)
 }
 */
 // 2nd solution:
-size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	if (dst == NULL || src == NULL)
 		return (0);
@@ -58,4 +58,23 @@ size_t  ft_strlcat(char * restrict dst, const char * restrict src, size_t dstsiz
 	*d = '\0';
 	return (dlen + ft_strlen(src));
 }
+/* condense version of the above code
+#include <stddef.h>
 
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize) {
+    if (!dst || !src) return 0;
+
+    size_t dlen = 0;
+    while (dst[dlen] && dlen < dstsize) dlen++;
+
+    size_t n = dstsize - dlen;
+    if (n == 0) return dlen + ft_strlen(src);
+
+    while (*src && n-- > 1) dst[dlen++] = *src++;
+    dst[dlen] = '\0';
+
+    while (*src++) dlen++;
+
+    return dlen;
+}
+*/

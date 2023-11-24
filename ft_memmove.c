@@ -3,17 +3,22 @@
 
 void    *ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *a = dst;
-	const unsigned char *b = src;
-	if (a < b)
+	unsigned char *destination;
+	unsigned char *source;
+	
+	destination = (unsigned char *)dst;
+	source = (unsigned char *)src;
+	if (destination < source)
 	{
 		while (len--)
-			*a++ = *b++;
+			*destination++ = *source++;
 	}
+	else if (!destination && !source)
+		return (NULL);
 	else
 	{
 		while (len--)
-			a[len] = b[len];
+			destination[len] = source[len];
 	}
 	return (dst);
 }
